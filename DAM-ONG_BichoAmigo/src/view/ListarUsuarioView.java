@@ -8,16 +8,26 @@ public class ListarUsuarioView {
 
 
     public void telaListar(ResultSet rs){
-
         try{
+            String leftAlignFormat = "| %-4d | %-16s | %-25s | %-11s | %-12s | %-11d |%n";
+
+            System.out.println("                                        TABELA DE USUÁRIOS");
+            System.out.format("+------+------------------+---------------------------+-------------+--------------+-------------+%n");
+            System.out.format("|  id  |       nome       |           email           |    senha    |   telefone   | fk_endereco |%n");
+            System.out.format("+------+------------------+---------------------------+-------------+--------------+-------------+%n");
+
             while(rs.next()){
-                System.out.println("id: " + rs.getInt("idusuario"));
-                System.out.print("nome: " + rs.getString("nome") );
-                System.out.print("email: " + rs.getString("email"));
-                System.out.print("senha: " + rs.getString("senha"));
-                System.out.print("telefone: " + rs.getString("telefone"));
-                System.out.println();
+                Integer id = rs.getInt("idusuario");
+                String nome = rs.getString("nome").replace("\n", "");
+                String email = rs.getString("email").replace("\n", "");
+                String senha = rs.getString("senha").replace("\n", "");
+                String telefone = rs.getString("telefone").replace("\n", "");
+                Integer endereco = rs.getInt("endereco_idendereco");
+
+                System.out.format(leftAlignFormat, id, nome, email, senha, telefone, endereco);
             }
+
+            System.out.format("+------+------------------+---------------------------+-------------+--------------+-------------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);
