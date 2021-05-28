@@ -20,7 +20,6 @@ public class MenuController {
                 menuCadastroController(menuView.telaCadastro());
                 break;
             case 0:
-                CadastrarAdocaoController cac = new CadastrarAdocaoController();
                 break;
             default:
                 menuView.telaOpcaoInvalida();
