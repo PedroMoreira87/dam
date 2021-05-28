@@ -12,7 +12,8 @@ public class PalestranteDAO {
     private PreparedStatement ps;
     private ResultSet rs;
     ConexaoBD con = ConexaoBD.getInstance();
-    public void create(Palestrante palestrante) {  // RETORNA ID DO USER NA QUERY
+
+    public Integer create(Palestrante palestrante) {  // RETORNA ID DO USER NA QUERY
         try {
             query = "INSERT INTO palestrantes (nome, email, senha, telefone, endereco_idendereco) VALUES (?, ?, ?, ?, ?)";
             ps = con.getConexao().prepareStatement(query, ps.RETURN_GENERATED_KEYS);
@@ -22,14 +23,23 @@ public class PalestranteDAO {
             ps.setString(4, palestrante.getTelefone());
             ps.setInt(5, palestrante.getEndereco());
 
-
             ps.executeUpdate();
+
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    int id = rs.getInt(1);
+                    return id;
+                }
+            }
+
             ps.close();
 
 
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+
+        return null;
     }
 
     public ResultSet read() {

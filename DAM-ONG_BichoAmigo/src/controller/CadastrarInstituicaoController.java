@@ -10,6 +10,7 @@ public class CadastrarInstituicaoController {
     private CadastrarInstituicaoView civ;
     private Instituicao inst;
     private InstituicaoDAO iDAO;
+    private Integer id;
 
     public CadastrarInstituicaoController() {
         civ = new CadastrarInstituicaoView();
@@ -20,7 +21,10 @@ public class CadastrarInstituicaoController {
         inst.setEndereco(idendereco);
 
         iDAO = new InstituicaoDAO();
-        iDAO.create(inst);
+        id = iDAO.create(inst);
     }
 
+    public Integer getId() {
+        return id;
+    }
 }

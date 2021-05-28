@@ -20,7 +20,7 @@ public class CadastrarEnderecoController { // NAO É UTILIZADO
         id = eDAO.create(endereco); // RETORNAR INT ID USER
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 }

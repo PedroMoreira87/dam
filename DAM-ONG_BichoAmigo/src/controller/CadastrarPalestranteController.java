@@ -9,6 +9,7 @@ public class CadastrarPalestranteController {
     private CadastrarPalestranteView cpv;
     private Palestrante palestrante;
     private PalestranteDAO pDAO;
+    private Integer id;
 
     public CadastrarPalestranteController() {
         cpv = new CadastrarPalestranteView();
@@ -19,7 +20,11 @@ public class CadastrarPalestranteController {
         palestrante.setEndereco(idendereco);
 
         pDAO = new PalestranteDAO();
-        pDAO.create(palestrante);
+        id = pDAO.create(palestrante);
+    }
+
+    public Integer getId() {
+        return id;
     }
 
 }

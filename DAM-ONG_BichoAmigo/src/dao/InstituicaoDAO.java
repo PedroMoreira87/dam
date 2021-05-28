@@ -13,7 +13,7 @@ public class InstituicaoDAO {
     private ResultSet rs;
     ConexaoBD con = ConexaoBD.getInstance();
 
-    public void create(Instituicao inst) {  // RETORNA ID DO USER NA QUERY
+    public Integer create(Instituicao inst) {  // RETORNA ID DO USER NA QUERY
         try {
             query = "INSERT INTO instituicoes (nome, email, senha, telefone, endereco_idendereco) VALUES (?, ?, ?, ?, ?)";
             ps = con.getConexao().prepareStatement(query, ps.RETURN_GENERATED_KEYS);
@@ -23,14 +23,23 @@ public class InstituicaoDAO {
             ps.setString(4, inst.getTelefone());
             ps.setInt(5, inst.getEndereco());
 
-
             ps.executeUpdate();
+
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    int id = rs.getInt(1);
+                    return id;
+                }
+            }
+
             ps.close();
 
 
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+
+        return null;
     }
 
     public ResultSet read() {
