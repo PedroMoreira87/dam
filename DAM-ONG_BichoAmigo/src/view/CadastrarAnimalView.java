@@ -9,15 +9,15 @@ public class CadastrarAnimalView {
 
     public Animal telaCadastro() {
         Animal animal = new Animal();
-        System.out.println("ANIMAL");
+        System.out.println("\nANIMAL");
         System.out.print("Nome: ");
-        animal.setNome(in.nextLine() + "\n");
+        animal.setNome(in.nextLine());
         System.out.print("Especie: ");
-        animal.setEspecie(in.nextLine() + "\n");
+        animal.setEspecie(in.nextLine());
         System.out.print("Raça: ");
-        animal.setRaca(in.nextLine() + "\n");
+        animal.setRaca(in.nextLine());
         System.out.print("Detalhes: ");
-        animal.setDetalhes(in.nextLine() + "\n");
+        animal.setDetalhes(in.nextLine());
         System.out.print("Idade: ");
         animal.setIdade(in.nextInt());
         return animal;

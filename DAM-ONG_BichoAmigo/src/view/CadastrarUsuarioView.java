@@ -9,15 +9,15 @@ public class CadastrarUsuarioView {
 
     public Usuario telaCadastro() {
         Usuario user = new Usuario();
-        System.out.println("USUÁRIO");
+        System.out.println("\nUSUÁRIO");
         System.out.print("Nome: ");
-        user.setNome(in.nextLine() + "\n");
+        user.setNome(in.nextLine());
         System.out.print("E-mail: ");
-        user.setEmail(in.nextLine() + "\n");
+        user.setEmail(in.nextLine());
         System.out.print("Senha: ");
-        user.setSenha(in.nextLine() + "\n");
+        user.setSenha(in.nextLine());
         System.out.print("Telefone: ");
-        user.setTelefone(in.nextLine() + "\n");
+        user.setTelefone(in.nextLine());
         return user;
     }
 

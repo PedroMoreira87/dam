@@ -9,11 +9,11 @@ public class CadastrarAdocaoView {
 
     public Adocao telaCadastro() {
         Adocao adocao = new Adocao();
-        System.out.println("ADOÇÃO");
+        System.out.println("\nADOÇÃO");
         System.out.print("Data: ");
-        adocao.setData(in.nextLine() + "\n");
+        adocao.setData(in.nextLine());
         System.out.print("Comentário: ");
-        adocao.setComentario(in.nextLine() + "\n");
+        adocao.setComentario(in.nextLine());
         return adocao;
     }
 

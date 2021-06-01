@@ -10,15 +10,15 @@ public class CadastrarInstituicaoView {
 
     public Instituicao telaCadastro() {
         Instituicao inst = new Instituicao();
-        System.out.println("INSTITUIÇÃO");
+        System.out.println("\nINSTITUIÇÃO");
         System.out.print("Nome: ");
-        inst.setNome(in.nextLine() + "\n");
+        inst.setNome(in.nextLine());
         System.out.print("E-mail: ");
-        inst.setEmail(in.nextLine() + "\n");
+        inst.setEmail(in.nextLine());
         System.out.print("Senha: ");
-        inst.setSenha(in.nextLine() + "\n");
+        inst.setSenha(in.nextLine());
         System.out.print("Telefone: ");
-        inst.setTelefone(in.nextLine() + "\n");
+        inst.setTelefone(in.nextLine());
         return inst;
     }
 

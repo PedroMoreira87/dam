@@ -11,13 +11,13 @@ public class CadastrarEnderecoView {
         Endereco endereco = new Endereco();
         System.out.println("\nENDEREÇO");
         System.out.print("Estado: ");
-        endereco.setEstado(in.nextLine() + "\n");
+        endereco.setEstado(in.nextLine());
         System.out.print("Cidade: ");
-        endereco.setCidade(in.nextLine() + "\n");
+        endereco.setCidade(in.nextLine());
         System.out.print("Bairro: ");
-        endereco.setBairro(in.nextLine() + "\n");
+        endereco.setBairro(in.nextLine());
         System.out.print("Rua: ");
-        endereco.setRua(in.nextLine() + "\n");
+        endereco.setRua(in.nextLine());
         System.out.print("Número: ");
         endereco.setNumero(in.nextInt());
         return endereco;

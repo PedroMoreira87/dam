@@ -9,15 +9,15 @@ public class CadastrarPalestranteView {
 
     public Palestrante telaCadastro() {
         Palestrante palestrante = new Palestrante();
-        System.out.println("PALESTRANTE");
+        System.out.println("\nPALESTRANTE");
         System.out.print("Nome: ");
-        palestrante.setNome(in.nextLine() + "\n");
+        palestrante.setNome(in.nextLine());
         System.out.print("E-mail: ");
-        palestrante.setEmail(in.nextLine() + "\n");
+        palestrante.setEmail(in.nextLine());
         System.out.print("Senha: ");
-        palestrante.setSenha(in.nextLine() + "\n");
+        palestrante.setSenha(in.nextLine());
         System.out.print("Telefone: ");
-        palestrante.setTelefone(in.nextLine() + "\n");
+        palestrante.setTelefone(in.nextLine());
         return palestrante;
     }
 
