@@ -5,8 +5,6 @@ import java.sql.SQLException;
 
 public class ListarUsuarioView {
 
-
-
     public void telaListar(ResultSet rs){
         try{
             String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
@@ -33,4 +31,5 @@ public class ListarUsuarioView {
             System.out.println(ex);
         }
     }
+
 }

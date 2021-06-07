@@ -27,7 +27,7 @@ public class PalestraDAO {
 
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
     }
 
@@ -39,7 +39,7 @@ public class PalestraDAO {
             return rs;
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;

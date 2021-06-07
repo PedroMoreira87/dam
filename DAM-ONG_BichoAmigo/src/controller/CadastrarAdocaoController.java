@@ -9,15 +9,12 @@ public class CadastrarAdocaoController {
     private CadastrarAdocaoView cav;
     private Adocao adocao;
     private AdocaoDAO aDAO;
+    private LoginUsuarioController luc;
 
-    public CadastrarAdocaoController() {
+    public CadastrarAdocaoController(int idusuario, int idanimal) {
+
         cav = new CadastrarAdocaoView();
         adocao = cav.telaCadastro();
-
-        CadastrarUsuarioController cuc = new CadastrarUsuarioController();
-        Integer idusuario = cuc.getId();
-        CadastrarAnimalController cac = new CadastrarAnimalController();
-        Integer idanimal = cac.getId();
 
         adocao.setUsuario(idusuario);
         adocao.setAnimal(idanimal);

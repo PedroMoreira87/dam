@@ -22,10 +22,10 @@ public class ConexaoBD {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(con_banco, usuario_mysql, senha_mysql);
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
         }
-        catch(ClassNotFoundException ex) {}
-        catch(SQLException ex) {}
-        catch(Exception ex) {}
 
     }
 

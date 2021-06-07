@@ -25,7 +25,7 @@ public class AdocaoDAO {
             ps.close();
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
     }
@@ -38,7 +38,7 @@ public class AdocaoDAO {
             return rs;
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;

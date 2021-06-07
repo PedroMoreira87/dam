@@ -23,19 +23,11 @@ public class UsuarioDAO {
             ps.setInt(5, user.getEndereco());
 
             ps.executeUpdate();
-
-            try (ResultSet rs = ps.getGeneratedKeys()) {
-                if (rs.next()) {
-                    int id = rs.getInt(1);
-                    return id;
-                }
-            }
-
             ps.close();
 
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;
@@ -49,7 +41,7 @@ public class UsuarioDAO {
             return rs;
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;

@@ -36,7 +36,7 @@ public class PalestranteDAO {
 
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;
@@ -50,7 +50,7 @@ public class PalestranteDAO {
             return rs;
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;

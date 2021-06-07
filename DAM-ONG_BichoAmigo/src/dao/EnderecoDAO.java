@@ -37,7 +37,7 @@ public class EnderecoDAO {
 
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;
@@ -51,7 +51,7 @@ public class EnderecoDAO {
             return rs;
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;

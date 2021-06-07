@@ -2,12 +2,14 @@ package controller;
 
 import view.MenuView;
 
+import java.sql.SQLException;
+
 public class MenuController {
     private MenuView menuView;
     private CadastrarUsuarioController cuc;
     private CadastrarInstituicaoController cic;
     private CadastrarPalestranteController cpc;
-    private LoginController lc;
+    private LoginUsuarioController luc;
 
     public MenuController() {
         menuView = new MenuView();
@@ -21,7 +23,7 @@ public class MenuController {
                 menuCadastroController(menuView.telaCadastro());
                 break;
             case 0:
-                ListarUsuarioController luc = new ListarUsuarioController();
+                ListarAnimalController lac = new ListarAnimalController();
                 break;
             default:
                 menuView.telaOpcaoInvalida();
@@ -29,17 +31,18 @@ public class MenuController {
         }
     }
 
-    public void menuLoginController(int opc) {
-        lc = new LoginController();
+    public void menuLoginController(int opc){
+
+
         switch(opc) {
             case 1:
-                lc.loginUsuario();
+                luc = new LoginUsuarioController();
                 break;
             case 2:
-                lc.loginInstituicao();
+//                lc.loginInstituicao();
                 break;
             case 3:
-                lc.loginPalestrante();
+//                lc.loginPalestrante();
                 break;
             case 0:
                 break;
