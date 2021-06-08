@@ -1,6 +1,5 @@
 package view;
 
-import model.Usuario;
 import java.util.Scanner;
 
 public class MenuUsuarioView {
@@ -9,7 +8,7 @@ public class MenuUsuarioView {
 
     public int telaMenu() {
         System.out.println("\nMENU USUÁRIO");
-        System.out.println("(1) Adotar Animal");
+        System.out.println("(1) Adotar animal");
         System.out.println("(0) Sair");
         System.out.print("Opção: ");
         return in.nextInt();

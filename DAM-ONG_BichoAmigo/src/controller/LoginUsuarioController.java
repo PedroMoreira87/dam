@@ -37,12 +37,12 @@ public class LoginUsuarioController {
 
     public Integer menuUsuarioController() {
         MenuUsuarioView menuUsuarioView = new MenuUsuarioView();
-        int opc = menuUsuarioView.telaMenu();
+        int opc = menuUsuarioView.telaMenu(); // Escolha do menu
 
         switch(opc) {
             case 1:
                 new ListarAnimalController();
-                return menuUsuarioView.menuAdotar(); // ID do animal
+                return menuUsuarioView.menuAdotar(); // Escolha do animal
             case 0:
                 break;
             default:

@@ -1,20 +1,20 @@
 package view;
 
-import model.Instituicao;
+import model.Palestrante;
 import java.util.Scanner;
 
 public class LoginPalestranteView {
 
     Scanner in = new Scanner(System.in);
 
-    public Instituicao telaLogin() {
-        Instituicao inst = new Instituicao();
+    public Palestrante telaLogin() {
+        Palestrante pales = new Palestrante();
         System.out.println("\nLOGIN - INSTITUIÇÃO");
         System.out.print("E-mail: ");
-        inst.setEmail(in.nextLine());
+        pales.setEmail(in.nextLine());
         System.out.print("Senha: ");
-        inst.setSenha(in.nextLine());
-        return inst;
+        pales.setSenha(in.nextLine());
+        return pales;
     }
 
 }

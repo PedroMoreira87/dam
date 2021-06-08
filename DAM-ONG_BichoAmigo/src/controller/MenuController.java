@@ -10,24 +10,28 @@ public class MenuController {
     private CadastrarInstituicaoController cic;
     private CadastrarPalestranteController cpc;
     private LoginUsuarioController luc;
+    private LoginInstituicaoController lic;
 
     public MenuController() {
-        menuView = new MenuView();
-        int opc = menuView.telaDeMenu();
+        boolean quit = false;
+        while(!quit) {
+            menuView = new MenuView();
+            int opc = menuView.telaDeMenu();
 
-        switch(opc) {
-            case 1:
-                menuLoginController(menuView.telaLogin());
-                break;
-            case 2:
-                menuCadastroController(menuView.telaCadastro());
-                break;
-            case 0:
-                ListarAnimalController lac = new ListarAnimalController();
-                break;
-            default:
-                menuView.telaOpcaoInvalida();
-                break;
+            switch (opc) {
+                case 1:
+                    menuLoginController(menuView.telaLogin());
+                    break;
+                case 2:
+                    menuCadastroController(menuView.telaCadastro());
+                    break;
+                case 0:
+                    quit = true;
+                    break;
+                default:
+                    menuView.telaOpcaoInvalida();
+                    break;
+            }
         }
     }
 
@@ -39,7 +43,7 @@ public class MenuController {
                 luc = new LoginUsuarioController();
                 break;
             case 2:
-//                lc.loginInstituicao();
+                lic = new LoginInstituicaoController();
                 break;
             case 3:
 //                lc.loginPalestrante();

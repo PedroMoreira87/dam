@@ -6,20 +6,30 @@ import java.sql.SQLException;
 public class ListarEnderecoView {
 
     public void telaListar(ResultSet rs){
-
         try{
+            String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
+
+            System.out.println("                                         TABELA DE ENDEREÇOS");
+            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.format("|  id  |       estado       |            cidade            |    bairro    |   rua   | numero |%n");
+            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+
             while(rs.next()){
-                System.out.println("id: " + rs.getInt("idendereco"));
-                System.out.println("estado: " + rs.getString("estado") );
-                System.out.println("cidade: " + rs.getString("cidade"));
-                System.out.println("bairro: " + rs.getString("bairro"));
-                System.out.println("rua: " + rs.getString("rua"));
-                System.out.println("numero: " + rs.getInt("numero"));
-                System.out.println();
+                Integer id = rs.getInt("idendereco");
+                String estado = rs.getString("estado");
+                String cidade = rs.getString("cidade");
+                String bairro = rs.getString("bairro");
+                String rua = rs.getString("rua");
+                Integer numero = rs.getInt("numero");
+
+                System.out.format(leftAlignFormat, id, estado, cidade, bairro, rua, numero);
             }
+
+            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);
         }
     }
+
 }

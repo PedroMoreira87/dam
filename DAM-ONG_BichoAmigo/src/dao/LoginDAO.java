@@ -1,5 +1,6 @@
 package dao;
 
+import model.Instituicao;
 import model.Usuario;
 
 import java.sql.PreparedStatement;
@@ -25,5 +26,21 @@ public class LoginDAO {
 
         return null;
     }
+
+    public ResultSet authInst(Instituicao inst) {
+        try {
+            query = "SELECT * FROM instituicoes WHERE email = '" + inst.getEmail() + "' AND senha = '" + inst.getSenha() + "'";
+            ps = con.getConexao().prepareStatement(query);
+            rs = ps.executeQuery();
+            return rs;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+
 
 }
