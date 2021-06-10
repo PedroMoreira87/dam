@@ -43,7 +43,7 @@ public class AnimalDAO {
 
     public ResultSet read() {
         try {
-            query = "SELECT * FROM animais";
+            query = "SELECT * FROM animais WHERE adotado = 0";
             ps = con.getConexao().prepareStatement(query);
             rs = ps.executeQuery();
             return rs;
@@ -53,6 +53,21 @@ public class AnimalDAO {
         }
 
         return null;
+    }
+
+    public boolean update(int id) {
+
+        try {
+            query = "UPDATE animais SET adotado = 1 WHERE idanimal = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return false;
     }
 
 }
