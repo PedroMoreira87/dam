@@ -14,6 +14,7 @@ public class LoginInstituicaoController {
     LoginInstituicaoView liv = new LoginInstituicaoView();
     LoginDAO lDAO = new LoginDAO();
     int idinstituicao;
+    boolean sair = false;
 
     public LoginInstituicaoController() {
         Instituicao instLoginInput = liv.telaLogin();
@@ -26,7 +27,9 @@ public class LoginInstituicaoController {
 
                 if(ispalestrante != null)
                 {
-                    new CadastrarPalestraController(idinstituicao, ispalestrante);
+                    while(!sair) {
+                        new CadastrarPalestraController(idinstituicao, ispalestrante);
+                    }
                 }
             }
 
@@ -43,6 +46,7 @@ public class LoginInstituicaoController {
                 new ListarPalestranteController();
                 return menuInstituicaoView.menuAgendarPalestra();
             case 0:
+                sair = true;
                 break;
             default:
                 menuView.telaOpcaoInvalida();
