@@ -5,7 +5,7 @@ import dao.EnderecoDAO;
 import model.Endereco;
 import view.CadastrarEnderecoView;
 
-public class CadastrarEnderecoController { // NAO É UTILIZADO
+public class CadastrarEnderecoController {
 
     private CadastrarEnderecoView cev;
     private Endereco endereco;
@@ -17,7 +17,7 @@ public class CadastrarEnderecoController { // NAO É UTILIZADO
         endereco = cev.telaCadastro();
 
         eDAO = new EnderecoDAO();
-        id = eDAO.create(endereco); // RETORNAR INT ID USER
+        id = eDAO.create(endereco);
     }
 
     public Integer getId() {

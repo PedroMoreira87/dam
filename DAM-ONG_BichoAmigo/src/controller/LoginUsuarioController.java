@@ -6,11 +6,10 @@ import view.LoginUsuarioView;
 import view.MenuAdmView;
 import view.MenuUsuarioView;
 import view.MenuView;
-
-import java.awt.image.ImagingOpException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
+
 
 public class LoginUsuarioController {
 
@@ -23,8 +22,6 @@ public class LoginUsuarioController {
     public LoginUsuarioController() {
         Usuario userLoginInput = luv.telaLogin();
         ResultSet rs = lDAO.authUser(userLoginInput);
-
-
 
         try {
             if(rs.next()) {
@@ -87,6 +84,12 @@ public class LoginUsuarioController {
                 case 1:
                     new CadastrarAnimalController();
                     break;
+                case 2:
+                    menuAdmListar();
+                    break;
+                case 3:
+                    menuAdmInserir();
+                    break;
                 case 0:
                     sair = true;
                     break;
@@ -94,9 +97,88 @@ public class LoginUsuarioController {
                     menuView.telaOpcaoInvalida();
                     break;
             }
-        } catch (Exception ex) {
+        } catch (InputMismatchException ex) {
             menuView.telaOpcaoInvalida();
         }
+    }
 
+    public void menuAdmListar() {
+        MenuAdmView menuAdmView = new MenuAdmView();
+
+        try {
+            int opc = menuAdmView.telaMenuListar();
+
+            switch(opc) {
+                case 1:
+                    new ListarAdocaoController();
+                    break;
+                case 2:
+                    new ListarAnimalController();
+                    break;
+                case 3:
+                    new ListarEnderecoController();
+                    break;
+                case 4:
+                    new ListarInstituicaoController();
+                    break;
+                case 5:
+                    new ListarPalestraController();
+                    break;
+                case 6:
+                    new ListarPalestranteController();
+                    break;
+                case 7:
+                    new ListarUsuarioController();
+                    break;
+                case 0:
+                    break;
+                default:
+                    menuView.telaOpcaoInvalida();
+                    break;
+            }
+
+        } catch (InputMismatchException ex) {
+            menuView.telaOpcaoInvalida();
+        }
+    }
+
+    public void menuAdmInserir() {
+        MenuAdmView menuAdmView = new MenuAdmView();
+
+        try {
+            int opc = menuAdmView.telaMenuInserir();
+
+            switch(opc) {
+                case 1:
+                    //new CadastrarAdocaoController();
+                    break;
+                case 2:
+                    new CadastrarAnimalController();
+                    break;
+                case 3:
+                    new CadastrarEnderecoController();
+                    break;
+                case 4:
+                    new CadastrarInstituicaoController();
+                    break;
+                case 5:
+                    //new CadastrarPalestraController();
+                    break;
+                case 6:
+                    new CadastrarPalestranteController();
+                    break;
+                case 7:
+                    new CadastrarUsuarioController();
+                    break;
+                case 0:
+                    break;
+                default:
+                    menuView.telaOpcaoInvalida();
+                    break;
+            }
+
+        } catch (InputMismatchException ex) {
+            menuView.telaOpcaoInvalida();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package dao;
 
 import model.Instituicao;
+import model.Palestrante;
 import model.Usuario;
 
 import java.sql.PreparedStatement;
@@ -30,6 +31,20 @@ public class LoginDAO {
     public ResultSet authInst(Instituicao inst) {
         try {
             query = "SELECT * FROM instituicoes WHERE email = '" + inst.getEmail() + "' AND senha = '" + inst.getSenha() + "'";
+            ps = con.getConexao().prepareStatement(query);
+            rs = ps.executeQuery();
+            return rs;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public ResultSet authPales(Palestrante pales) {
+        try {
+            query = "SELECT * FROM palestrantes WHERE email = '" + pales.getEmail() + "' AND senha = '" + pales.getSenha() + "'";
             ps = con.getConexao().prepareStatement(query);
             rs = ps.executeQuery();
             return rs;

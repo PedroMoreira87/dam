@@ -46,7 +46,7 @@ public class MenuController {
                 lic = new LoginInstituicaoController();
                 break;
             case 3:
-//                lc.loginPalestrante();
+                new LoginPalestranteController();
                 break;
             case 0:
                 break;

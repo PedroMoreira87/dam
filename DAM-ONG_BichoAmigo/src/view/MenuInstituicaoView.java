@@ -9,7 +9,7 @@ public class MenuInstituicaoView {
     public int telaMenu() {
         System.out.println("\nMENU INSTITUIÇÃO");
         System.out.println("(1) Agendar palestra");
-        System.out.println("(2) Sair");
+        System.out.println("(0) Sair");
         System.out.println("Opção: ");
         return in.nextInt();
     }
