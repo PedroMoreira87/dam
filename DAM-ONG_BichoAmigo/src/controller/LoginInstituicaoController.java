@@ -1,7 +1,9 @@
 package controller;
 
 import dao.LoginDAO;
+import dao.TemaDAO;
 import model.Instituicao;
+import view.ListarTemaView;
 import view.LoginInstituicaoView;
 import view.MenuInstituicaoView;
 import view.MenuView;
@@ -22,13 +24,12 @@ public class LoginInstituicaoController {
 
         try {
             if(rs.next()) {
-                idinstituicao = rs.getInt("idinstituicao");
-                Integer ispalestrante = menuInstituicaoController();
+                while(!sair) {
+                    idinstituicao = rs.getInt("idinstituicao");
+                    Integer idtema = menuInstituicaoController();
 
-                if(ispalestrante != null)
-                {
-                    while(!sair) {
-                        new CadastrarPalestraController(idinstituicao, ispalestrante);
+                    if (idtema != null) {
+                        new CadastrarPalestraController(idinstituicao, idtema);
                     }
                 }
             }
@@ -43,8 +44,15 @@ public class LoginInstituicaoController {
 
         switch(opc) {
             case 1:
+                TemaDAO tDAO = new TemaDAO();
+
                 new ListarPalestranteController();
-                return menuInstituicaoView.menuAgendarPalestra();
+                int idpalestrante = menuInstituicaoView.menuAgendarPalestra();
+
+                ResultSet rs2  = tDAO.read(idpalestrante);
+
+                new ListarTemaView().telaListar(rs2);
+                return menuInstituicaoView.menuEscolherTema();
             case 0:
                 sair = true;
                 break;

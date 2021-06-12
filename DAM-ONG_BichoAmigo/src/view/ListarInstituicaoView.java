@@ -7,12 +7,12 @@ public class ListarInstituicaoView {
 
     public void telaListar(ResultSet rs){
         try{
-            String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
+            String leftAlignFormat = "| %-4d | %-45s | %-27s | %-13s | %-12s | %-11d |%n";
 
-            System.out.println("                                         TABELA DE INSTITUIÇÃO");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       nome       |            email            |    senha    |   telefone   | fk_endereco |%n");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.println("                                                    TABELA DE INSTITUIÇÃO");
+            System.out.format("+------+-----------------------------------------------+-----------------------------+---------------+--------------+-------------+%n");
+            System.out.format("|  id  |                     nome                      |            email            |     senha     |   telefone   | fk_endereco |%n");
+            System.out.format("+------+-----------------------------------------------+-----------------------------+---------------+--------------+-------------+%n");
 
             while(rs.next()){
                 Integer id = rs.getInt("idinstituicao");
@@ -25,7 +25,7 @@ public class ListarInstituicaoView {
                 System.out.format(leftAlignFormat, id, nome, email, senha, telefone, endereco);
             }
 
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.format("+------+-----------------------------------------------+-----------------------------+---------------+--------------+-------------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);

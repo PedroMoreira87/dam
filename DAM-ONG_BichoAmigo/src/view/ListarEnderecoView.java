@@ -7,12 +7,12 @@ public class ListarEnderecoView {
 
     public void telaListar(ResultSet rs){
         try{
-            String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
+            String leftAlignFormat = "| %-4d | %-10s | %-10s | %-12s | %-21s | %-6d |%n";
 
-            System.out.println("                                         TABELA DE ENDEREÇOS");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       estado       |            cidade            |    bairro    |   rua   | numero |%n");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.println("                             TABELA DE ENDEREÇOS");
+            System.out.format("+------+------------+------------+--------------+-----------------------+--------+%n");
+            System.out.format("|  id  |   estado   |   cidade   |    bairro    |          rua          | numero |%n");
+            System.out.format("+------+------------+------------+--------------+-----------------------+--------+%n");
 
             while(rs.next()){
                 Integer id = rs.getInt("idendereco");
@@ -25,7 +25,7 @@ public class ListarEnderecoView {
                 System.out.format(leftAlignFormat, id, estado, cidade, bairro, rua, numero);
             }
 
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.format("+------+------------+------------+--------------+-----------------------+--------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);

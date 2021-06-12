@@ -38,6 +38,20 @@ public class TemaDAO {
         return null;
     }
 
+    public ResultSet read(int idpalestrante) {
+        try {
+            query = "SELECT * FROM temas WHERE palestrantes_idpalestrante = "+idpalestrante+"";
+            ps = con.getConexao().prepareStatement(query);
+            rs = ps.executeQuery();
+            return rs;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
     public ResultSet read() {
         try {
             query = "SELECT * FROM temas";

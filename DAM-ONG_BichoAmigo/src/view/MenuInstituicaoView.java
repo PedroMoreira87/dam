@@ -19,4 +19,8 @@ public class MenuInstituicaoView {
         return in.nextInt();
     }
 
+    public int menuEscolherTema() {
+        System.out.print("Id to tema: ");
+        return in.nextInt();
+    }
 }

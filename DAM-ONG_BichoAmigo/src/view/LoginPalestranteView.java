@@ -9,7 +9,7 @@ public class LoginPalestranteView {
 
     public Palestrante telaLogin() {
         Palestrante pales = new Palestrante();
-        System.out.println("\nLOGIN - INSTITUIÇÃO");
+        System.out.println("\nLOGIN - PALESTRANTE");
         System.out.print("E-mail: ");
         pales.setEmail(in.nextLine());
         System.out.print("Senha: ");

@@ -130,6 +130,9 @@ public class LoginUsuarioController {
                 case 7:
                     new ListarUsuarioController();
                     break;
+                case 8:
+                    new ListarTemaController();
+                    break;
                 case 0:
                     break;
                 default:
@@ -169,6 +172,9 @@ public class LoginUsuarioController {
                     break;
                 case 7:
                     new CadastrarUsuarioController();
+                    break;
+                case 8:
+                    //new CadastrarTemaController();
                     break;
                 case 0:
                     break;

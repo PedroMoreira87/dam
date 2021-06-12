@@ -7,12 +7,12 @@ public class ListarAnimalView {
 
     public void telaListar(ResultSet rs){
         try{
-            String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11s |%n";
+            String leftAlignFormat = "| %-4d | %-10s | %-13s | %-13s | %-5s | %-20s |%n";
 
-            System.out.println("                                         TABELA DE ANIMAIS");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       Nome       |            Espécie          |    Raça     |   Idade      |  Detalhes   |%n");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.println("                                 TABELA DE ANIMAIS");
+            System.out.format("+------+------------+---------------+---------------+-------+----------------------+%n");
+            System.out.format("|  id  |    Nome    |    Espécie    |     Raça      | Idade |       Detalhes       |%n");
+            System.out.format("+------+------------+---------------+---------------+-------+----------------------+%n");
 
             while(rs.next()){
                 Integer id = rs.getInt("idanimal");
@@ -25,7 +25,7 @@ public class ListarAnimalView {
                 System.out.format(leftAlignFormat, id, nome, especie, raca, idade, detalhes);
             }
 
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.format("+------+------------+---------------+---------------+-------+----------------------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);

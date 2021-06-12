@@ -10,12 +10,12 @@ public class CadastrarPalestraController {
     private Palestra palestra;
     private PalestraDAO pDAO;
 
-    public CadastrarPalestraController(int idinstituicao, int idpalestrante) {
+    public CadastrarPalestraController(int idinstituicao, int idtema) {
         cpv = new CadastrarPalestraView();
         palestra = cpv.telaCadastro();
 
         palestra.setInstituicao(idinstituicao);
-        palestra.setPalestrate(idpalestrante);
+        palestra.setTema(idtema);
 
         pDAO = new PalestraDAO();
         pDAO.create(palestra);

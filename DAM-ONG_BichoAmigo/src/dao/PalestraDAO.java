@@ -14,13 +14,12 @@ public class PalestraDAO {
 
     public void create(Palestra palestra) {
         try {
-            query = "INSERT INTO palestras (tema, horario, data, instituicao_idinstituicao, palestrante_idpalestrante) VALUES (?, ?, ?, ?, ?)";
+            query = "INSERT INTO palestras (horario, data, instituicoes_idinstituicao, temas_idtema) VALUES (?, ?, ?, ?)";
             ps = con.getConexao().prepareStatement(query);
-            ps.setString(1, palestra.getTema());
-            ps.setString(2, palestra.getHorario());
-            ps.setString(3, palestra.getData());
-            ps.setInt(4, palestra.getInstituicao());
-            ps.setInt(5, palestra.getPalestrate());
+            ps.setString(1, palestra.getHorario());
+            ps.setString(2, palestra.getData());
+            ps.setInt(3, palestra.getInstituicao());
+            ps.setInt(4, palestra.getTema());
 
             ps.executeUpdate();
             ps.close();

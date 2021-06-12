@@ -7,25 +7,24 @@ public class ListarAdocaoView {
 
     public void telaListar(ResultSet rs){
         try{
-            String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
+            String leftAlignFormat = "| %-4d | %-10s | %-22s | %-11d | %-11d |%n";
 
-            System.out.println("                                         TABELA DE ADOÇÃO");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       nome       |            email            |    senha    |   telefone   | fk_endereco |%n");
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.println("                             TABELA DE ADOÇÃO");
+            System.out.format("+------+------------+------------------------+-------------+-------------+%n");
+            System.out.format("|  ID  |    Data    |       Comentário       | fk_idsuario | fk_idanimal |%n");
+            System.out.format("+------+------------+------------------------+-------------+-------------+%n");
 
             while(rs.next()){
-                Integer id = rs.getInt("idusuario");
-                String nome = rs.getString("nome");
-                String email = rs.getString("email");
-                String senha = rs.getString("senha");
-                String telefone = rs.getString("telefone");
-                Integer endereco = rs.getInt("endereco_idendereco");
+                Integer id = rs.getInt("idadocao");
+                String data = rs.getString("data");
+                String comentario = rs.getString("comentario");
+                int usuario = rs.getInt("usuario_idusuario");
+                int animal = rs.getInt("animal_idanimal");
 
-                System.out.format(leftAlignFormat, id, nome, email, senha, telefone, endereco);
+                System.out.format(leftAlignFormat, id, data, comentario, usuario, animal);
             }
 
-            System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
+            System.out.format("+------+------------+------------------------+-------------+-------------+%n");
         }
         catch(SQLException ex) {
             System.out.println(ex);
