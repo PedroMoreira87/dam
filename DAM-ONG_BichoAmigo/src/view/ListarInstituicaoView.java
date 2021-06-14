@@ -9,9 +9,9 @@ public class ListarInstituicaoView {
         try{
             String leftAlignFormat = "| %-4d | %-45s | %-27s | %-13s | %-12s | %-11d |%n";
 
-            System.out.println("                                                    TABELA DE INSTITUIÇÃO");
+            System.out.println("                                                  TABELA DE INSTITUIÇÕES");
             System.out.format("+------+-----------------------------------------------+-----------------------------+---------------+--------------+-------------+%n");
-            System.out.format("|  id  |                     nome                      |            email            |     senha     |   telefone   | fk_endereco |%n");
+            System.out.format("|  ID  |                     Nome                      |            Email            |     Senha     |   Telefone   | FK_Endereço |%n");
             System.out.format("+------+-----------------------------------------------+-----------------------------+---------------+--------------+-------------+%n");
 
             while(rs.next()){

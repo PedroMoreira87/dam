@@ -5,12 +5,11 @@ import java.util.Scanner;
 
 public class CadastrarInstituicaoView {
 
-
     Scanner in = new Scanner(System.in);
 
     public Instituicao telaCadastro() {
         Instituicao inst = new Instituicao();
-        System.out.println("\nINSTITUIÇÃO");
+        System.out.println("\nCADASTRO - INSTITUIÇÃO");
         System.out.print("Nome: ");
         inst.setNome(in.nextLine());
         System.out.print("E-mail: ");

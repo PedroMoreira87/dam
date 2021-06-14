@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 
 public class MenuView {
+
     Scanner in = new Scanner(System.in);
 
     public int telaDeMenu() {
@@ -15,7 +16,7 @@ public class MenuView {
     }
 
     public int telaLogin() {
-        System.out.println("\nLOGIN - TIPO DE CONTA");
+        System.out.println("\nMENU LOGIN");
         System.out.println(("(1) Logar como usuário"));
         System.out.println(("(2) Logar como instituição"));
         System.out.println(("(3) Logar como palestrante"));

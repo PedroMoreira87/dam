@@ -9,7 +9,7 @@ public class CadastrarAdocaoView {
 
     public Adocao telaCadastro() {
         Adocao adocao = new Adocao();
-        System.out.println("\nADOÇÃO");
+        System.out.println("\nCADASTRO - ADOÇÃO");
         System.out.print("Data: ");
         adocao.setData(in.nextLine());
         System.out.print("Comentário: ");

@@ -9,7 +9,7 @@ public class CadastrarPalestraView {
 
     public Palestra telaCadastro() {
         Palestra palestra = new Palestra();
-        System.out.println("\nPALESTRA");
+        System.out.println("\nCADASTRO - PALESTRA");
         System.out.print("Data: ");
         palestra.setData(in.nextLine());
         System.out.print("Horário: ");

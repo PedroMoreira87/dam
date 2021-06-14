@@ -1,6 +1,5 @@
 package controller;
 
-
 import dao.EnderecoDAO;
 import model.Endereco;
 import view.CadastrarEnderecoView;

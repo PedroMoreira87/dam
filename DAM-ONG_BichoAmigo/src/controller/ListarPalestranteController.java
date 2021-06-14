@@ -2,7 +2,6 @@ package controller;
 
 import dao.PalestranteDAO;
 import view.ListarPalestranteView;
-
 import java.sql.ResultSet;
 
 public class ListarPalestranteController {

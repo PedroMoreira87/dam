@@ -21,8 +21,6 @@ public class EnderecoDAO {
             ps.setString(3, endereco.getBairro());
             ps.setString(4, endereco.getRua());
             ps.setInt(5, endereco.getNumero());
-            // ps.setInt(5, user.getEndereco()); CRIAR ENDERECO SEPARADAMENTE
-
 
             ps.executeUpdate();
 

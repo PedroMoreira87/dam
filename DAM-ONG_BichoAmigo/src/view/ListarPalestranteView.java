@@ -9,9 +9,9 @@ public class ListarPalestranteView {
         try{
             String leftAlignFormat = "| %-4d | %-16s | %-27s | %-11s | %-12s | %-11d |%n";
 
-            System.out.println("                                         TABELA DE PALESTRANTE");
+            System.out.println("                                      TABELA DE PALESTRANTES");
             System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       nome       |            email            |    senha    |   telefone   | fk_endereco |%n");
+            System.out.format("|  ID  |       Nome       |            Email            |    Senha    |   Telefone   | FK_Endereço |%n");
             System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
 
             while(rs.next()){

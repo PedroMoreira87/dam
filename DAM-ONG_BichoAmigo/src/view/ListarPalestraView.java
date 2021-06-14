@@ -11,7 +11,7 @@ public class ListarPalestraView {
 
             System.out.println("                TABELA DE PALESTRAS");
             System.out.format("+------+---------+------------+-------------+------+%n");
-            System.out.format("|  id  | horario |    data    | instituicao | tema |%n");
+            System.out.format("|  ID  | Horário |    Data    | Instituição | Tema |%n");
             System.out.format("+------+---------+------------+-------------+------+%n");
 
             while(rs.next()){

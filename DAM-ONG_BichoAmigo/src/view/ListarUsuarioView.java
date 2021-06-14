@@ -11,7 +11,7 @@ public class ListarUsuarioView {
 
             System.out.println("                                         TABELA DE USUÁRIOS");
             System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
-            System.out.format("|  id  |       nome       |            email            |    senha    |   telefone   | fk_endereco |%n");
+            System.out.format("|  ID  |       Nome       |            Email            |    Senha    |   Telefone   | FK_Endereço |%n");
             System.out.format("+------+------------------+-----------------------------+-------------+--------------+-------------+%n");
 
             while(rs.next()){

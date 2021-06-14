@@ -11,7 +11,7 @@ public class ListarEnderecoView {
 
             System.out.println("                             TABELA DE ENDEREÇOS");
             System.out.format("+------+------------+------------+--------------+-----------------------+--------+%n");
-            System.out.format("|  id  |   estado   |   cidade   |    bairro    |          rua          | numero |%n");
+            System.out.format("|  ID  |   Estado   |   Cidade   |    Bairro    |          Rua          | Número |%n");
             System.out.format("+------+------------+------------+--------------+-----------------------+--------+%n");
 
             while(rs.next()){

@@ -4,7 +4,6 @@ import dao.InstituicaoDAO;
 import model.Instituicao;
 import view.CadastrarInstituicaoView;
 
-
 public class CadastrarInstituicaoController {
 
     private CadastrarInstituicaoView civ;

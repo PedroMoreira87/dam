@@ -9,7 +9,7 @@ public class CadastrarAnimalView {
 
     public Animal telaCadastro() {
         Animal animal = new Animal();
-        System.out.println("\nANIMAL");
+        System.out.println("\nCADASTRO - ANIMAL");
         System.out.print("Nome: ");
         animal.setNome(in.nextLine());
         System.out.print("Especie: ");

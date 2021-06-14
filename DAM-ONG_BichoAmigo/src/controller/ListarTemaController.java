@@ -2,7 +2,6 @@ package controller;
 
 import dao.TemaDAO;
 import view.ListarTemaView;
-
 import java.sql.ResultSet;
 
 public class ListarTemaController {

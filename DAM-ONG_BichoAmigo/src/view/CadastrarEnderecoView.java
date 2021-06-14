@@ -9,7 +9,7 @@ public class CadastrarEnderecoView {
 
     public Endereco telaCadastro() {
         Endereco endereco = new Endereco();
-        System.out.println("\nENDEREÇO");
+        System.out.println("\nCADASTRO - ENDEREÇO");
         System.out.print("Estado: ");
         endereco.setEstado(in.nextLine());
         System.out.print("Cidade: ");

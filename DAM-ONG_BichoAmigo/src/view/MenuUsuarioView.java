@@ -15,7 +15,7 @@ public class MenuUsuarioView {
     }
 
     public int menuAdotar() {
-        System.out.print("Id do animal que deseja adotar: ");
+        System.out.print("ID do animal que deseja adotar: ");
         return in.nextInt();
     }
 }

@@ -9,9 +9,9 @@ public class ListarTemaView {
         try{
             String leftAlignFormat = "| %-4d | %-22s | %-11d |%n";
 
-            System.out.println("                TABELA DE TEMA");
+            System.out.println("               TABELA DE TEMAS");
             System.out.format("+------+------------------------+-------------+%n");
-            System.out.format("|  id  |         titulo         | palestrante |%n");
+            System.out.format("|  ID  |         Título         | Palestrante |%n");
             System.out.format("+------+------------------------+-------------+%n");
 
             while(rs.next()){

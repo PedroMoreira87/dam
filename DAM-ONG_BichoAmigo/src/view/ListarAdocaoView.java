@@ -9,9 +9,9 @@ public class ListarAdocaoView {
         try{
             String leftAlignFormat = "| %-4d | %-10s | %-22s | %-11d | %-11d |%n";
 
-            System.out.println("                             TABELA DE ADOÇÃO");
+            System.out.println("                            TABELA DE ADOÇÕES");
             System.out.format("+------+------------+------------------------+-------------+-------------+%n");
-            System.out.format("|  ID  |    Data    |       Comentário       | fk_idsuario | fk_idanimal |%n");
+            System.out.format("|  ID  |    Data    |       Comentário       | FK_Usuário  |  FK_Animal  |%n");
             System.out.format("+------+------------+------------------------+-------------+-------------+%n");
 
             while(rs.next()){

@@ -11,7 +11,6 @@ public class CadastrarAdocaoController {
     private Adocao adocao;
     private AdocaoDAO aDAO;
     private AnimalDAO animalDAO;
-    private LoginUsuarioController luc;
 
     public CadastrarAdocaoController(int idusuario, int idanimal) {
 

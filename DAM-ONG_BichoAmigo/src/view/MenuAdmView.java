@@ -17,21 +17,22 @@ public class MenuAdmView {
     }
 
     public int telaMenuListar() {
-        System.out.println("\nMENU LISTAR ADMIN");
-        System.out.println("(1) Listar Adoção");
-        System.out.println("(2) Listar Animal");
-        System.out.println("(3) Listar Endereço");
-        System.out.println("(4) Listar Instituição");
-        System.out.println("(5) Listar Palestra");
-        System.out.println("(6) Listar Palestrante");
-        System.out.println("(7) Listar Usuário");
-        System.out.println("(8) Listar Temas (EM BREVE)");
+        System.out.println("\nMENU ADMIN - LISTAR");
+        System.out.println("(1) Listar Adoções");
+        System.out.println("(2) Listar Animais");
+        System.out.println("(3) Listar Endereços");
+        System.out.println("(4) Listar Instituições");
+        System.out.println("(5) Listar Palestras");
+        System.out.println("(6) Listar Palestrantes");
+        System.out.println("(7) Listar Usuários");
+        System.out.println("(8) Listar Temas");
         System.out.println("(0) Sair");
+        System.out.print("Opção: ");
         return in.nextInt();
     }
 
     public int telaMenuInserir() {
-        System.out.println("\nMENU INSERIR ADMIN");
+        System.out.println("\nMENU ADMIN - INSERIR");
         System.out.println("(1) Inserir Adoção (EM BREVE)");
         System.out.println("(2) Inserir Animal");
         System.out.println("(3) Inserir Endereço");
@@ -41,6 +42,7 @@ public class MenuAdmView {
         System.out.println("(7) Inserir Usuário");
         System.out.println("(8) Inserir Temas (EM BREVE)");
         System.out.println("(0) Sair");
+        System.out.print("Opção: ");
         return in.nextInt();
     }
 

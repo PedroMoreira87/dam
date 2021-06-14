@@ -9,7 +9,7 @@ public class CadastrarPalestranteView {
 
     public Palestrante telaCadastro() {
         Palestrante palestrante = new Palestrante();
-        System.out.println("\nPALESTRANTE");
+        System.out.println("\nCADASTRO - PALESTRANTE");
         System.out.print("Nome: ");
         palestrante.setNome(in.nextLine());
         System.out.print("E-mail: ");

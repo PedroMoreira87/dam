@@ -9,7 +9,7 @@ public class CadastrarUsuarioView {
 
     public Usuario telaCadastro() {
         Usuario user = new Usuario();
-        System.out.println("\nUSUÁRIO");
+        System.out.println("\nCADASTRO - USUÁRIO");
         System.out.print("Nome: ");
         user.setNome(in.nextLine());
         System.out.print("E-mail: ");
