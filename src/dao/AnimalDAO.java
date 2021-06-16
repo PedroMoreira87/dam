@@ -70,4 +70,15 @@ public class AnimalDAO {
         return false;
     }
 
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM animais WHERE idanimal = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

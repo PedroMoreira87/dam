@@ -54,4 +54,15 @@ public class PalestranteDAO {
 
         return null;
     }
+
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM palestrantes WHERE idpalestrante = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

@@ -47,4 +47,15 @@ public class UsuarioDAO {
         return null;
     }
 
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM usuarios WHERE idusuario = "+id;
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

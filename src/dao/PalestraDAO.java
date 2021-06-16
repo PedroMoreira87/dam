@@ -44,4 +44,15 @@ public class PalestraDAO {
         return null;
     }
 
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM palestras WHERE idpalestra = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

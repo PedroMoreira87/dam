@@ -1,6 +1,6 @@
 package controller;
 
-import dao.LoginDAO;
+import dao.*;
 import model.Usuario;
 import view.LoginUsuarioView;
 import view.MenuAdmView;
@@ -89,6 +89,9 @@ public class LoginUsuarioController {
                     break;
                 case 3:
                     menuAdmInserir();
+                    break;
+                case 4:
+                    menuAdmDeletar();
                     break;
                 case 0:
                     sair = true;
@@ -187,4 +190,82 @@ public class LoginUsuarioController {
             menuView.telaOpcaoInvalida();
         }
     }
+
+    public void menuAdmDeletar() {
+        MenuAdmView menuAdmView = new MenuAdmView();
+
+        try {
+            int opc = menuAdmView.telaMenuDeletar();
+            int id;
+
+            switch(opc) {
+                case 1:
+                    new ListarAdocaoController();
+                    id = menuAdmView.telaDeletarInput();
+                    AdocaoDAO aDAO = new AdocaoDAO();
+                    aDAO.delete(id);
+                    break;
+                case 2:
+                    new ListarAnimalController();
+                    id = menuAdmView.telaDeletarInput();
+                    AnimalDAO a2DAO = new AnimalDAO();
+                    a2DAO.delete(id);
+                    break;
+                case 3:
+                    new ListarEnderecoController();
+                    id = menuAdmView.telaDeletarInput();
+                    EnderecoDAO eDAO = new EnderecoDAO();
+                    eDAO.delete(id);
+                    break;
+                case 4:
+                    new ListarInstituicaoController();
+                    id = menuAdmView.telaDeletarInput();
+                    InstituicaoDAO iDAO = new InstituicaoDAO();
+                    iDAO.delete(id);
+                    break;
+                case 5:
+                    new ListarPalestraController();
+                    id = menuAdmView.telaDeletarInput();
+                    PalestraDAO pDAO = new PalestraDAO();
+                    pDAO.delete(id);
+                    break;
+                case 6:
+                    new ListarPalestranteController();
+                    id = menuAdmView.telaDeletarInput();
+                    PalestranteDAO p2DAO = new PalestranteDAO();
+                    p2DAO.delete(id);
+                    break;
+                case 7:
+                    new ListarUsuarioController();
+                    id = menuAdmView.telaDeletarInput();
+                    UsuarioDAO uDAO = new UsuarioDAO();
+                    uDAO.delete(id);
+                    break;
+                case 8:
+                    new ListarTemaController();
+                    id = menuAdmView.telaDeletarInput();
+                    TemaDAO tDAO = new TemaDAO();
+                    tDAO.delete(id);
+                    break;
+                case 0:
+                    break;
+                default:
+                    menuView.telaOpcaoInvalida();
+                    break;
+            }
+
+        } catch (InputMismatchException ex) {
+            menuView.telaOpcaoInvalida();
+        }
+    }
+
+//    ALTER TABLE TABLEName
+//    drop CONSTRAINT FK_CONSTRAINTNAME;
+//
+//    ALTER TABLE TABLENAME
+//    ADD CONSTRAINT FK_CONSTRAINTNAME
+//    FOREIGN KEY (FId)
+//    REFERENCES OTHERTABLE
+//            (Id)
+//    ON DELETE CASCADE ON UPDATE NO ACTION;
 }

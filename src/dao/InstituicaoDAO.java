@@ -54,4 +54,15 @@ public class InstituicaoDAO {
 
         return null;
     }
+
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM instituicoes WHERE idinstituicao = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

@@ -55,4 +55,15 @@ public class EnderecoDAO {
         return null;
     }
 
+    public void delete(int id) {
+        try {
+            query = "DELETE FROM enderecos WHERE idendereco = '"+id+"'";
+            ps = con.getConexao().prepareStatement(query);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }
