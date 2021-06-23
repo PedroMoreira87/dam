@@ -15,9 +15,9 @@ public class ConexaoBD {
     private ConexaoBD(){
 
         usuario_mysql = "root";
-        senha_mysql = "";
+        senha_mysql = "root";
 
-        con_banco = "jdbc:mysql://127.0.0.1:3308/petz?useSSL=false";
+        con_banco = "jdbc:mysql://127.0.0.1:3307/petz?useSSL=false";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");

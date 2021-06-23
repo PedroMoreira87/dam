@@ -196,56 +196,31 @@ public class LoginUsuarioController {
 
         try {
             int opc = menuAdmView.telaMenuDeletar();
-            int id;
 
             switch(opc) {
                 case 1:
-                    new ListarAdocaoController();
-                    id = menuAdmView.telaDeletarInput();
-                    AdocaoDAO aDAO = new AdocaoDAO();
-                    aDAO.delete(id);
+                    new DeletarAdocaoController();
                     break;
                 case 2:
-                    new ListarAnimalController();
-                    id = menuAdmView.telaDeletarInput();
-                    AnimalDAO a2DAO = new AnimalDAO();
-                    a2DAO.delete(id);
+                    new DeletarAnimalController();
                     break;
                 case 3:
-                    new ListarEnderecoController();
-                    id = menuAdmView.telaDeletarInput();
-                    EnderecoDAO eDAO = new EnderecoDAO();
-                    eDAO.delete(id);
+                    new DeletarEnderecoController();
                     break;
                 case 4:
-                    new ListarInstituicaoController();
-                    id = menuAdmView.telaDeletarInput();
-                    InstituicaoDAO iDAO = new InstituicaoDAO();
-                    iDAO.delete(id);
+                    new DeletarInstituicaoController();
                     break;
                 case 5:
-                    new ListarPalestraController();
-                    id = menuAdmView.telaDeletarInput();
-                    PalestraDAO pDAO = new PalestraDAO();
-                    pDAO.delete(id);
+                    new DeletarPalestraController();
                     break;
                 case 6:
-                    new ListarPalestranteController();
-                    id = menuAdmView.telaDeletarInput();
-                    PalestranteDAO p2DAO = new PalestranteDAO();
-                    p2DAO.delete(id);
+                    new DeletarPalestranteController();
                     break;
                 case 7:
-                    new ListarUsuarioController();
-                    id = menuAdmView.telaDeletarInput();
-                    UsuarioDAO uDAO = new UsuarioDAO();
-                    uDAO.delete(id);
+                    new DeletarUsuarioController();
                     break;
                 case 8:
-                    new ListarTemaController();
-                    id = menuAdmView.telaDeletarInput();
-                    TemaDAO tDAO = new TemaDAO();
-                    tDAO.delete(id);
+                    new DeletarTemaController();
                     break;
                 case 0:
                     break;
